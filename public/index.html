@@ -274,7 +274,7 @@
     </div>
 
     <script>
-        const API_BASE = window.location.origin + window.location.pathname.replace(/\/[^/]*$/, '') + '/api/items';
+        const API_BASE = window.location.origin + window.location.pathname.replace(/\/[^/]*$/, '').replace(/\/+$/, '') + '/api/items';
 
         const form = document.getElementById('item-form');
         const formTitle = document.getElementById('form-title');
