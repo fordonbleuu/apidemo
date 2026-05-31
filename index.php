@@ -39,6 +39,13 @@ switch (true) {
         break;
 
     default:
+        // Serve the frontend for non-API routes
+        $frontend = __DIR__ . '/public/index.html';
+        if (file_exists($frontend)) {
+            header('Content-Type: text/html; charset=UTF-8');
+            readfile($frontend);
+            exit;
+        }
         http_response_code(404);
         echo json_encode(['message' => 'Endpoint not found']);
         break;
